@@ -79,7 +79,7 @@ public class MainA {
 // Dialog Box Output for Showing Triangle Type
    
  JOptionPane.showMessageDialog(null,
-      "The trinagle type is: " + strTriOut + equil + isos + scal,
+      "The triangle type is: " + strTriOut + equil + isos + scal,
       "Assignment 1 Output", JOptionPane.INFORMATION_MESSAGE);
 
 
