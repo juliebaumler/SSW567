@@ -35,13 +35,16 @@ public class Main {
       "Assignment 1 Input", JOptionPane.QUESTION_MESSAGE);
     // Convert string to double
     double side_z = Double.parseDouble(numberString);
+
+		// assign the sides to a sorted array
+		// this means sides[0] is the shortest side
+		// and sides[2] is the longest side
+		double[] sides = new double[]{ side_x, side_y, side_z};
+		java.util.Arrays.sort(sides );
 		
 		try {
 
-			if ( valid_triangle( side_x, side_y, side_z ))
-			{
-				System.out.println("valid\n");
-			}
+			check_valid_triangle( sides );
 		
     	String strTriOut = "";
     	String equil = "";
@@ -51,40 +54,26 @@ public class Main {
     	//Triangle Determination
 
     	//Right Triangle
-    	if (((side_x * side_x) + (side_y * side_y)) == (side_z * side_z))
+    	if ( ( Math.pow(sides[0], 2) + Math.pow(sides[1], 2)) == Math.pow(sides[3], 2) )
     	{
 				System.out.println("right triangle");
         strTriOut = "right triangle and ";
 			}
     
-    	if (((side_x * side_x) + (side_z * side_z)) == (side_y * side_y))
-    	{   
-				System.out.println("right triangle");
-        strTriOut = "right triangle and ";
-			}
-        
-    	if (((side_z * side_z) + (side_y * side_y)) == (side_x * side_x))
-    	{
-				System.out.println("right triangle");
-        strTriOut = "right triangle and ";
-			}
-        
     	//equilateral triangle
-    	if ((side_x == side_y) && (side_x == side_z) && (side_y == side_z))
+    	if ( sides[0] == sides[2] )
     	{
 				System.out.println("equilateral triangle");
     		equil += "equilateral triangle "; 
 			}
-
     	//isosceles triangle
-    	if (((side_x == side_y) || (side_y == side_z) || (side_x == side_z)) && !((side_x == side_y) && (side_x == side_z) && (side_y == side_z)))
+    	else if ( sides[0] == sides[1] )
     	{
 				System.out.println("isosceles triangle");
     		isos += "isosceles triangle "; 
 			}
-
     	//scalene triangle
-    	else if (!((side_x == side_y) && (side_x == side_z) && (side_y == side_z)))
+    	else 
     	{
 				System.out.println("scalene triangle");
     		scal += "scalene triangle "; 
@@ -104,14 +93,14 @@ public class Main {
 		}
 	}
 
-  protected static boolean valid_triangle( double a, double b, double c ) throws TriangleException {
-		if ( a > 0  && b > 0 && c > 0 )
+  protected static void check_valid_triangle( double triangle[] ) throws TriangleException {
+		if ( triangle[0] <= 0 )
 		{
-			return true;
+			throw new TriangleException("Triangles cannot be formed with sides of length less than zero.");
 		}
-		else
+		else if ( (triangle[0] + triangle[1] ) < triangle[2] )
 		{
-			throw new TriangleException("All sides must have a length larger than zero.");
+			throw new TriangleException("These sides do not form a triangle.");
 		}
 	}
 
