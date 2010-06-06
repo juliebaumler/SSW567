@@ -13,28 +13,42 @@ public class Main {
   /**Main method*/
   public static void main(String[] args) {
 
+	double side_x = 0;
+	double side_y = 0;
+	double side_z = 0;
+
+
     // Enter the first side of the triangle
-    String numberString = JOptionPane.showInputDialog(null,
+    String numberString1 = JOptionPane.showInputDialog(null,
       "Enter the first length of the triangle ",
       "Assignment 1 Input", JOptionPane.QUESTION_MESSAGE);
-    // Convert string to double
-    double side_x = Double.parseDouble(numberString);
 
 
     // Enter the second side of the triangle
-    numberString = JOptionPane.showInputDialog(null,
+    String numberString2 = JOptionPane.showInputDialog(null,
       "Enter the second length of the triangle ",
       "Assignment 1 Input", JOptionPane.QUESTION_MESSAGE);
-    // Convert string to double
-    double side_y = Double.parseDouble(numberString);
 
 
     // Enter the third side of the triangle
-    numberString = JOptionPane.showInputDialog(null,
+    String numberString3 = JOptionPane.showInputDialog(null,
       "Enter the third length of the triangle ",
       "Assignment 1 Input", JOptionPane.QUESTION_MESSAGE);
-    // Convert string to double
-    double side_z = Double.parseDouble(numberString);
+
+    // Convert strings to double
+		try {
+    	side_x = Double.parseDouble(numberString1);
+      side_y = Double.parseDouble(numberString2);
+    	side_z = Double.parseDouble(numberString3);
+				System.out.println(side_x + " " + side_y + " " + side_z );
+		}
+		catch ( NumberFormatException ex ) {
+			JOptionPane.showMessageDialog( null, 
+				"Entries for all sides must be numbers, ie (1.12347, 3, 1.234e2)", 
+				"Error:", JOptionPane.INFORMATION_MESSAGE);
+    	System.exit(1);
+			
+		}
 
 		// assign the sides to a sorted array
 		// this means sides[0] is the shortest side
@@ -54,7 +68,7 @@ public class Main {
     	//Triangle Determination
 
     	//Right Triangle
-    	if ( ( Math.pow(sides[0], 2) + Math.pow(sides[1], 2)) == Math.pow(sides[3], 2) )
+    	if ( ( Math.pow(sides[0], 2) + Math.pow(sides[1], 2)) == Math.pow(sides[2], 2) )
     	{
 				System.out.println("right triangle");
         strTriOut = "right triangle and ";
