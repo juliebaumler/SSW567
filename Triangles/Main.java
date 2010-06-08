@@ -132,7 +132,7 @@ public class Main {
 		{
 			throw new TriangleException("Sorry cannot process triangles with sides longer than " + Double.MAX_VALUE);
 		}
-		else if ( (triangle[0] + triangle[1] ) < triangle[2] )
+		else if ( (triangle[0] + triangle[1] ) <= triangle[2] )
 		{
 			throw new TriangleException("These sides do not form a triangle.");
 		}
