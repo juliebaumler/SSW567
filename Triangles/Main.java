@@ -94,7 +94,7 @@ public class Main {
 				} 
 
     		//isosceles triangle
-    		if ( sides[0] == sides[1] )
+    		if ( sides[0] == sides[1] || sides[1] == sides[2] )
     		{
 					System.out.println("isosceles triangle");
     			strTriOut += " isosceles triangle "; 
