@@ -35,6 +35,7 @@ public class Main {
       "Enter the third length of the triangle ",
       "Assignment 1 Input", JOptionPane.QUESTION_MESSAGE);
 
+ 
     // Convert strings to double
 		try {
     	side_x = Double.parseDouble(numberString1);
@@ -73,16 +74,20 @@ public class Main {
     	//equilateral triangle
     	if ( sides[0] == sides[2] )
     	{
-				System.out.println("equilateral triangle");
+				//System.out.println("equilateral triangle");
     		strTriOut = " equilateral triangle "; 
 			}
 			else
 			{
 
     		//Right Triangle
-    		if ( ( Math.pow(sides[0], 2) + Math.pow(sides[1], 2)) == Math.pow(sides[2], 2) )
+				// Use sqrt( A^2 + B^2) = C  because 
+				// programmer tests show it
+				// evens out Java rounding errors 
+				// whereas A^2 + B^2 = C^2 does not
+				if (Double.compare(Math.sqrt( Math.pow(sides[0], 2) + Math.pow(sides[1], 2)), sides[2]  ) == 0 )
     		{
-					System.out.println("right triangle");
+					//System.out.println("right triangle");
 						if ( Double.isInfinite( Math.pow(sides[2], 2) ) )
 						{
        	 			strTriOut = "Due to size of triangle, unable to determine whether it is a right triangle. ";
@@ -96,13 +101,13 @@ public class Main {
     		//isosceles triangle
     		if ( sides[0] == sides[1] || sides[1] == sides[2] )
     		{
-					System.out.println("isosceles triangle");
+					//System.out.println("isosceles triangle");
     			strTriOut += " isosceles triangle "; 
 				}
     		//scalene triangle
     		else 
     		{
-					System.out.println("scalene triangle");
+					//System.out.println("scalene triangle");
     			strTriOut += " scalene triangle "; 
 				}
 			}
