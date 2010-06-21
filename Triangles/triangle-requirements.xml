@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<requirements>	<requirement><docid><![CDATA[
+1
+]]></docid><title><![CDATA[
+3 Inputs
+]]></title><description><![CDATA[
+<p>The program will read in 3 inputs -&nbsp; numbers representing the 3 sides of a triangle.</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+2
+]]></docid><title><![CDATA[
+Input Range
+]]></title><description><![CDATA[
+<p>The 3 inputs shall be numbers, greater than 0, and no larger than the system's maximum floating point number.&nbsp;</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+4
+]]></docid><title><![CDATA[
+Handle Invalid Input
+]]></title><description><![CDATA[
+<p>If invalid input is entered, the program shall print an error message and quit.</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+3b
+]]></docid><title><![CDATA[
+Accept Decimals
+]]></title><description><![CDATA[
+<p>Decimals shall be an acceptable number format.</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+3a
+]]></docid><title><![CDATA[
+Accept Integers
+]]></title><description><![CDATA[
+<p>Integers shall be an acceptable number format.</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+3c
+]]></docid><title><![CDATA[
+Scientific Notation
+]]></title><description><![CDATA[
+<p>Scientific notation shall be an acceptable number format.</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+5
+]]></docid><title><![CDATA[
+Legal Triangle
+]]></title><description><![CDATA[
+<p><font color="#000000"><font face="Verdana, sans-serif"><font size="2">The program shall verify that the sides form a legal triangle:&nbsp;</font></font></font></p>
+<p><font color="#000000"><font face="Verdana, sans-serif"><font size="2"> <font color="#000000">In a legal triangle, for any 3 sides x, y, z where x&lt;=y&lt;=z, then x+y &gt; z.</font></font></font></font></p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+6
+]]></docid><title><![CDATA[
+Handle Illegal Triangles
+]]></title><description><![CDATA[
+<p><font color="#000000"><font face="Verdana, sans-serif"><font size="2"><font color="#000000">If it is not a legal triangle, the program shall print an error message and quit.</font></font></font></font></p>
+<p>&nbsp;</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+8
+]]></docid><title><![CDATA[
+Isoceles Triangle
+]]></title><description><![CDATA[
+<p>If two sides are equal, but not three, the program shall report the triangle as &quot;isosceles.&quot;</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+7
+]]></docid><title><![CDATA[
+Equilateral Triangle
+]]></title><description><![CDATA[
+<p>If the sides are all equal, the program shall report the triangle as &quot;Equilateral.&quot;</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+9
+]]></docid><title><![CDATA[
+Scalene Trianlge
+]]></title><description><![CDATA[
+<p>If none of the sides are equal, the program shall report the triangle as &quot;scalene.&quot;</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+10
+]]></docid><title><![CDATA[
+Right Triangle Reporting
+]]></title><description><![CDATA[
+<p>For right triangles, the program will report that they are right triangles.</p>
+<p><font color="#000000"><font size="2">In a right triangle, for any 3 sides x, y, z where x&lt;=y&lt;=z, then x^2 + y^2 = z^2.</font></font></p>
+<p>Applies only to isosceles and scalene triangles as by definition equaliteral triangles cannot be right triangles.</p>
+]]></description></requirement>
+	<requirement><docid><![CDATA[
+11
+]]></docid><title><![CDATA[
+Very Large Triangles
+]]></title><description><![CDATA[
+<p><font size="2">The program shall support very large triangles (sides larger than sqrt(max float)) by stating that right triangle-ness is indeterminate unless it is an equilateral triangle.</font></p>
+]]></description></requirement>
+</requirements>
